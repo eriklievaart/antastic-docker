@@ -1,0 +1,5 @@
+#!/bin/dash
+set -e
+
+docker build . -t lievaart/antastic $@
+
