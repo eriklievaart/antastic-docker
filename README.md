@@ -1,6 +1,6 @@
 
-cron
-====
+antastic
+========
 
 A ubuntu based docker image for running antastic
 
