@@ -8,19 +8,16 @@ apk add git
 
 git_dir=~/Development/git
 ws_dir=~/.cache/ws
+buildfile=$git_dir/ant/master.xml
+
 mkdir -p $git_dir
 mkdir -p $ws_dir
 
 cd $git_dir
 git clone https://github.com/eriklievaart/ant.git
-git clone https://github.com/eriklievaart/toolkit.git
 git clone https://github.com/eriklievaart/ws.git
+ant -f "$buildfile" -Dproject.name=ws -Dskip.resolve=true -Dskip.test.compile=true -Dskip.test=true -Dskip.preprocess=true master-jar-deploy
 
-buildfile=$git_dir/ant/master.xml
-ant -f "$buildfile" -Dproject.name=toolkit master-install master-osgi-install
-ant -f "$buildfile" -Dproject.name=ws master-jar-deploy
-cp ~/Applications/ws/ws.jar /root/.cache/ws
-
-rm -rf ~/Development/*
+rm -rf ~/Development/* /tmp/build /tmp/sandbox
 rm $0
 
