@@ -1,5 +1,5 @@
 
-PS1="felix-docker:\w # "
+PS1="antastic-docker:\w # "
 HISTSIZE=10000
 HISTFILESIZE=20000
 
